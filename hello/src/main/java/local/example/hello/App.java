@@ -31,6 +31,7 @@ import java.io.IOException;
 public class App 
         extends Application {
 
+    private static final String HOME = "view/home";
     private static final double WIDTH = 400.0;
     private static final double HEIGHT = 200.0;
 
@@ -40,7 +41,7 @@ public class App
     public void start(Stage stage) 
             throws IOException {
         scene = new Scene(
-                loadFXML("view/home"), 
+                loadFXML(HOME), 
                 WIDTH, 
                 HEIGHT
         );

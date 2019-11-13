@@ -39,7 +39,7 @@ public class App
         var matrixImage = new MatrixImage(WIDTH, HEIGHT);
         group.getChildren().add(matrixImage.getCanvas());
         var scene = new Scene(group, WIDTH, HEIGHT);
-        stage.setTitle("pseudo-random matrix image from scratch");
+        stage.setTitle("pseudo-random pixel matrix");
         stage.setScene(scene);
         stage.show();
     }

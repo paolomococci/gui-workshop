@@ -19,6 +19,8 @@
 package local.example.demo;
 
 import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
@@ -27,9 +29,16 @@ import javafx.stage.Stage;
 public class App 
         extends Application {
 
+    private static final double WIDTH = 650.0;
+    private static final double HEIGHT = 480.0;
+
     @Override
     public void start(Stage stage) {
-        
+        var groupMesh = new Group();
+        var scene = new Scene(groupMesh, WIDTH, HEIGHT, true);
+        stage.setScene(scene);
+        stage.setTitle("demo chart 3d");
+        stage.show();
     }
 
     public static void main(String[] args) {

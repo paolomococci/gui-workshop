@@ -36,14 +36,14 @@ public class MatrixImage {
 
     public MatrixImage(double width, double height) {
         this.side = (int) (height / 40);
-        int size = D * side * side;
+        int size = D * side * side * side;
         this.imageVector = new byte[size];
         this.random = new Random();
         this.canvas = new Canvas(width / 2, height / 2);
         this.canvas.setTranslateX(width / 4);
         this.canvas.setTranslateY(height / 4);
         var graphicsContext = canvas.getGraphicsContext2D();
-        this.drawCanvasWithScratchImages(graphicsContext, height, width, size);
+        this.drawCanvasWithScratchImages(graphicsContext, height, width);
         graphicsContext.applyEffect(
                 new DropShadow(
                         D * side,
@@ -52,14 +52,49 @@ public class MatrixImage {
                         Color.grayRgb((int) (255 * random.nextDouble()))));
     }
 
-    private void makeScratchImage(int size) {
+    private void makeScratchImage() {
+        int index = 0;
+        for (int i = 0; i < side; i++) {
+            int red = (int) (255 * random.nextDouble());
+            for (int j = 0; j < side; j++) {
+                int green = (int) (255 * random.nextDouble());
+                for (int k = 0; k < 10; k++) {
+                    int blue = (int) (255 * random.nextDouble());
+                    imageVector[index] = (byte) red;
+                    imageVector[index + 1] = (byte) green;
+                    imageVector[index + 2] = (byte) blue;
+                    index += D;
+                }
+            }
+        }
     }
 
     private void drawCanvasWithScratchImages(
             GraphicsContext graphicsContext,
             double height,
-            double width,
-            int size) {
+            double width) {
+        boolean visibility = true;
+        var pixelWriter = graphicsContext.getPixelWriter();
+        PixelFormat<ByteBuffer> pixelFormat = PixelFormat.getByteRgbInstance();
+        for (int i = (int) height / 8; i < height * D / 8; i += side) {
+            for (int j = (int) width / 8; j < width * D / 8; j += side) {
+                if (visibility) {
+                    this.makeScratchImage();
+                    pixelWriter.setPixels(
+                            j,
+                            i,
+                            side,
+                            side,
+                            pixelFormat,
+                            imageVector,
+                            0,
+                            D * side
+                    );
+                }
+                visibility = random.nextBoolean();
+            }
+            visibility = random.nextBoolean();
+        }
     }
 
     public Canvas getCanvas() {

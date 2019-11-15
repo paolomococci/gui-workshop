@@ -27,18 +27,18 @@ import javafx.scene.shape.Rectangle;
 public class Face 
         extends Pane {
 
-    Rectangle rectangleSide;
+    Rectangle rectangleFace;
 
     public Face(double size) {
-        rectangleSide = new Rectangle(size, size);
-        getChildren().add(rectangleSide);
+        rectangleFace = new Rectangle(size, size);
+        getChildren().add(rectangleFace);
         var translatioOfTheZAxis = 0.0;
         var widthOfLine = 1.0;
-        Color colorOfGrid = Color.GRAY;
+        var colorOfGrid = Color.GRAY;
         for (int translationOfTheYAxis = 0;
                 translationOfTheYAxis <= size;
                 translationOfTheYAxis += size / 100) {
-            Line line = new Line(0, 0, size, 0);
+            var line = new Line(0, 0, size, 0);
             line.setStroke(colorOfGrid);
             line.setFill(colorOfGrid);
             line.setTranslateY(translationOfTheYAxis);
@@ -49,7 +49,7 @@ public class Face
         for (int translationOfTheXAxis = 0; 
                 translationOfTheXAxis <= size; 
                 translationOfTheXAxis += size / 100) {
-            Line line = new Line(0, 0, 0, size);
+            var line = new Line(0, 0, 0, size);
             line.setStroke(colorOfGrid);
             line.setFill(colorOfGrid);
             line.setTranslateX(translationOfTheXAxis);
@@ -60,6 +60,6 @@ public class Face
     }
 
     public void setFill(Paint paint) {
-        rectangleSide.setFill(paint);
+        rectangleFace.setFill(paint);
     }
 }

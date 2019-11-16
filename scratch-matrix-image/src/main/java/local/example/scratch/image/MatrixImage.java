@@ -19,7 +19,7 @@
 package local.example.scratch.image;
 
 import java.nio.ByteBuffer;
-import java.util.Random;
+import java.security.SecureRandom;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.effect.DropShadow;
@@ -32,13 +32,13 @@ public class MatrixImage {
     private final int side;
     private final byte imageVector[];
     private final Canvas canvas;
-    private final Random random;
+    private final SecureRandom secureRandom;
 
     public MatrixImage(double width, double height) {
         this.side = (int) (height / 40);
         int size = D * side * side * side;
         this.imageVector = new byte[size];
-        this.random = new Random();
+        this.secureRandom = new SecureRandom();
         this.canvas = new Canvas(width / 2, height / 2);
         this.canvas.setTranslateX(width / 4);
         this.canvas.setTranslateY(height / 4);
@@ -49,17 +49,17 @@ public class MatrixImage {
                         D * side,
                         D * side,
                         D * side,
-                        Color.grayRgb((int) (255 * random.nextDouble()))));
+                        Color.grayRgb(secureRandom.nextInt(255))));
     }
 
     private void makeScratchImage() {
         int index = 0;
         for (int i = 0; i < side; i++) {
-            int red = (int) (255 * random.nextDouble());
+            int red = secureRandom.nextInt(255);
             for (int j = 0; j < side; j++) {
-                int green = (int) (255 * random.nextDouble());
+                int green = secureRandom.nextInt(255);
                 for (int k = 0; k < 10; k++) {
-                    int blue = (int) (255 * random.nextDouble());
+                    int blue = secureRandom.nextInt(255);
                     imageVector[index] = (byte) red;
                     imageVector[index + 1] = (byte) green;
                     imageVector[index + 2] = (byte) blue;
@@ -91,9 +91,9 @@ public class MatrixImage {
                             D * side
                     );
                 }
-                visibility = random.nextBoolean();
+                visibility = secureRandom.nextBoolean();
             }
-            visibility = random.nextBoolean();
+            visibility = secureRandom.nextBoolean();
         }
     }
 

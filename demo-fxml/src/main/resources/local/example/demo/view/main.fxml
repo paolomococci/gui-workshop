@@ -1,12 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" 
-            fx:id="mainAnchorPane" 
-            styleClass="main" 
-            stylesheets="@../style/default.css" 
-            xmlns="http://javafx.com/javafx/11.0.1" 
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="local.example.demo.controller.MainController">
-</AnchorPane>
+<VBox fx:id="mainWindow" 
+      styleClass="main" 
+      stylesheets="@../style/main.css" 
+      xmlns="http://javafx.com/javafx/11.0.1" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="local.example.demo.controller.MainController">
+    <children>
+        
+        <MenuBar fx:id="menuBar" 
+                 styleClass="menuBar" 
+                 VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" 
+                      styleClass="menu" 
+                      text="file">
+                    <items>
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="new" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="open" />
+                        <Menu mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                              text="open recent…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="close" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="save" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="save as…" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="revert" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false"  
+                      styleClass="menu" 
+                      text="edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="undo" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="redo" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="cut" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="copy" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="paste" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="delete" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="select all" />
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="delect all" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false"  
+                      styleClass="menu" 
+                      text="help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" 
+                                  styleClass="menuItem" 
+                                  text="about" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        
+        <SplitPane fx:id="mainSplitPane" 
+                   id="mainSplitPane"
+                   dividerPositions="0.25, 0.75" 
+                   VBox.vgrow="ALWAYS">
+            <items>
+                <AnchorPane fx:id="navBarAnchorPane" 
+                            id="navBarAnchorPane">
+                    <children>
+                        <Label fx:id="navBarLabel" 
+                               id="navBarLabel" 
+                               text="nav bar"/>
+                    </children>
+                </AnchorPane>
+                <ScrollPane>
+                    <content>
+                        <AnchorPane fx:id="mainViewAnchorPane" 
+                                    id="mainViewAnchorPane">
+                            <children>
+                                <Label fx:id="mainViewLabel" 
+                                       id="mainViewLabel"
+                                       text="main view"/>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+                <AnchorPane fx:id="detailAnchorPane" 
+                            id="detailAnchorPane">
+                    <children>
+                        <Label fx:id="detailLabel" 
+                               id="detailLabel"
+                               text="detail"/>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        
+        <HBox fx:id="bottomBox" 
+              id="bottomBox" 
+              VBox.vgrow="NEVER">
+            <children>
+                <Label fx:id="leftStatusLabel" 
+                       id="leftStatusLabel"
+                       text="left status" 
+                       HBox.hgrow="ALWAYS"/>
+                <Pane fx:id="bottomPane" 
+                      id="bottomPane" 
+                      HBox.hgrow="ALWAYS"/>
+                <Label fx:id="rightStatusLabel" 
+                       id="rightStatusLabel" 
+                       text="right status" 
+                       HBox.hgrow="NEVER"/>
+            </children>
+        </HBox>
+        
+    </children>
+</VBox>

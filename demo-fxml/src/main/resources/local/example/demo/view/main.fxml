@@ -30,34 +30,35 @@
                     <items>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="new" />
+                                  text="new"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="open" />
+                                  text="open"/>
                         <Menu mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                              text="open recent…" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
+                              text="open recent…"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="close" />
+                                  text="close"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="save" />
+                                  text="save"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="save as…" />
+                                  text="save as…"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="revert" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
+                                  text="revert"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="preferences…" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
+                                  text="preferences…"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="quit" />
+                                  onAction="#menuItemQuit" 
+                                  text="quit"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false"  
@@ -66,30 +67,30 @@
                     <items>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="undo" />
+                                  text="undo"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="redo" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
+                                  text="redo"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="cut" />
+                                  text="cut"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="copy" />
+                                  text="copy"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="paste" />
+                                  text="paste"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="delete" />
-                        <SeparatorMenuItem mnemonicParsing="false" />
+                                  text="delete"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="select all" />
+                                  text="select all"/>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="delect all" />
+                                  text="delect all"/>
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false"  
@@ -98,7 +99,8 @@
                     <items>
                         <MenuItem mnemonicParsing="false" 
                                   styleClass="menuItem" 
-                                  text="about" />
+                                  onAction="#menuItemAbout" 
+                                  text="about"/>
                     </items>
                 </Menu>
             </menus>

@@ -26,28 +26,59 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import local.example.demo.App;
+import local.example.demo.alert.MenuItemAbout;
 
 public class MainController {
 
-       @FXML private VBox mainWindow;
-       
-       @FXML private MenuBar menuBar;
-       
-       @FXML private SplitPane mainSplitPane;
-       @FXML private AnchorPane navBarAnchorPane;
-       @FXML private Label navBarLabel;
-       @FXML private AnchorPane mainViewAnchorPane;
-       @FXML private Label mainViewLabel;
-       @FXML private AnchorPane detailAnchorPane;
-       @FXML private Label detailLabel;
-       
-       @FXML private HBox bottomBox;       
-       @FXML private Label leftStatusLabel;
-       @FXML private Pane bottomPane;
-       @FXML private Label rightStatusLabel;
-       
-       @FXML
-       public void initialize() {
-           
-       }
+    @FXML
+    private VBox mainWindow;
+
+    @FXML
+    private MenuBar menuBar;
+
+    @FXML
+    private SplitPane mainSplitPane;
+    @FXML
+    private AnchorPane navBarAnchorPane;
+    @FXML
+    private Label navBarLabel;
+    @FXML
+    private AnchorPane mainViewAnchorPane;
+    @FXML
+    private Label mainViewLabel;
+    @FXML
+    private AnchorPane detailAnchorPane;
+    @FXML
+    private Label detailLabel;
+
+    @FXML
+    private HBox bottomBox;
+    @FXML
+    private Label leftStatusLabel;
+    @FXML
+    private Pane bottomPane;
+    @FXML
+    private Label rightStatusLabel;
+
+    private App app;
+
+    @FXML
+    public void initialize() {
+
+    }
+
+    @FXML
+    private void menuItemQuit() {
+        System.exit(0);
+    }
+    
+    @FXML
+    private void menuItemAbout() {
+        MenuItemAbout.showAlert();
+    }
+
+    public void setApp(App app) {
+        this.app = app;
+    }
 }

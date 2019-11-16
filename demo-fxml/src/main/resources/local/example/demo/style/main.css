@@ -1,3 +1,62 @@
 .main {
-    -fx-background-color: wheat;
+    -fx-background-color: gray;
+}
+
+.menuBar {
+    -fx-alignment: center;
+    -fx-font-size: 14px;
+}
+
+.menu {
+    
+}
+
+.menuItem {
+    
+}
+
+#mainSplitPane {
+    
+}
+
+#navBarAnchorPane {
+    -fx-background-color: #cff;
+}
+
+#navBarLabel {
+    -fx-font-size: 15px;
+}
+
+#mainViewAnchorPane {
+    -fx-pref-width: 310px;
+    -fx-pref-height: 430px;
+    -fx-background-color: #fff;
+}
+
+#mainViewLabel {
+    -fx-font-size: 15px;
+}
+
+#detailAnchorPane {
+    -fx-background-color: #cff;
+}
+
+#detailLabel {
+    -fx-font-size: 15px;
+}
+
+#bottomBox {
+    -fx-background-color: aliceblue;
+}
+
+#leftStatusLabel {
+    -fx-font-size: 12px;
+}
+
+#bottomPane {
+    
+}
+
+#rightStatusLabel {
+    -fx-font-size: 12px;
 }

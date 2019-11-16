@@ -19,12 +19,32 @@
 package local.example.demo.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 public class MainController {
 
-       @FXML
-       private AnchorPane mainAnchorPane;
+       @FXML private VBox mainWindow;
+       
+       @FXML private MenuBar menuBar;
+       
+       @FXML private SplitPane mainSplitPane;
+       @FXML private AnchorPane navBarAnchorPane;
+       @FXML private Label navBarLabel;
+       @FXML private AnchorPane mainViewAnchorPane;
+       @FXML private Label mainViewLabel;
+       @FXML private AnchorPane detailAnchorPane;
+       @FXML private Label detailLabel;
+       
+       @FXML private HBox bottomBox;       
+       @FXML private Label leftStatusLabel;
+       @FXML private Pane bottomPane;
+       @FXML private Label rightStatusLabel;
        
        @FXML
        public void initialize() {

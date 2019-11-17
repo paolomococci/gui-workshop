@@ -37,7 +37,7 @@ public class Face
         var colorOfGrid = Color.GRAY;
         for (int translationOfTheYAxis = 0;
                 translationOfTheYAxis <= size;
-                translationOfTheYAxis += size / 100) {
+                translationOfTheYAxis += size / 25) {
             var line = new Line(0, 0, size, 0);
             line.setStroke(colorOfGrid);
             line.setFill(colorOfGrid);
@@ -48,7 +48,7 @@ public class Face
         }
         for (int translationOfTheXAxis = 0; 
                 translationOfTheXAxis <= size; 
-                translationOfTheXAxis += size / 100) {
+                translationOfTheXAxis += size / 25) {
             var line = new Line(0, 0, 0, size);
             line.setStroke(colorOfGrid);
             line.setFill(colorOfGrid);
